@@ -35,6 +35,7 @@ class ModelTrainer:
             x_test = test_array[:, :-1]
             y_test = test_array[:, -1]
 
+            # Models
             models = {
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
@@ -44,12 +45,51 @@ class ModelTrainer:
                 "AdaBoost Regressor": AdaBoostRegressor()
             }
 
+            # Parameters (FIXED INDENTATION)
+            params = {
+                "Random Forest": {
+                    'n_estimators': [50, 100, 200],
+                    'max_depth': [None, 10, 20, 30],
+                    'min_samples_split': [2, 5, 10]
+                },
+
+                "Decision Tree": {
+                    'criterion': ['squared_error', 'friedman_mse'],
+                    'max_depth': [None, 10, 20, 30],
+                    'min_samples_split': [2, 5, 10]
+                },
+
+                "Gradient Boosting": {
+                    'n_estimators': [50, 100, 200],
+                    'learning_rate': [0.01, 0.1, 0.2],
+                    'max_depth': [3, 5, 10]
+                },
+
+                "Linear Regression": {
+                    # no major hyperparameters
+                },
+
+                "K-Neighbors Regressor": {
+                    'n_neighbors': [3, 5, 7, 9],
+                    'weights': ['uniform', 'distance'],
+                    'algorithm': ['auto', 'ball_tree', 'kd_tree']
+                },
+
+                "AdaBoost Regressor": {
+                    'n_estimators': [50, 100, 200],
+                    'learning_rate': [0.01, 0.1, 1.0],
+                    'loss': ['linear', 'square', 'exponential']
+                }
+            }
+
+            # IMPORTANT: pass params also
             model_report = evaluate_models(
                 x_train=x_train,
                 y_train=y_train,
                 x_test=x_test,
                 y_test=y_test,
-                models=models
+                models=models,
+                params=params
             )
 
             best_model_score = max(model_report.values())
@@ -78,5 +118,5 @@ class ModelTrainer:
             return r2_square
 
         except Exception as e:
-             print("ACTUAL ERROR:", e)
-             raise CustomException(e, sys)
+            print("ACTUAL ERROR:", e)
+            raise CustomException(e, sys)
