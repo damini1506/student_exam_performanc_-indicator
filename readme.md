@@ -1,37 +1,33 @@
-🎓 Student Performance Predictor
-📝 Description
+# 🎓 Student Performance Predictor
+
+## 📝 Description
 This is an end-to-end Machine Learning web application designed to predict a student's math score based on demographic information and performance in other subjects. The project is structured as a modular Python package, breaking down the machine learning lifecycle into distinct components for data ingestion, transformation, and model training.
 
-💻 Tech Stack
-Language: Python 3.x
+<br>
 
-Web Framework: Flask
+## 💻 Tech Stack
+* **Language:** Python 3.x
+* **Web Framework:** Flask
+* **Machine Learning:** Scikit-Learn (Random Forest, Gradient Boosting, Decision Trees, etc.)
+* **Data Manipulation & Analysis:** Pandas, NumPy
+* **Frontend:** HTML5, CSS (via Flask templates)
+* **Serialization:** Dill
 
-Machine Learning: Scikit-Learn (Random Forest, Gradient Boosting, Decision Trees, etc.)
+<br>
 
-Data Manipulation & Analysis: Pandas, NumPy
+## 🚀 Features
+* **Web Interface:** A user-friendly Flask application (`application.py`) that allows users to input student details and receive real-time predictions via HTML templates.
+* **Modular ML Pipeline:** * **Data Ingestion:** Reads raw data, performs train-test splits, and stores them in the `artifacts` directory.
+  * **Data Transformation:** Handles missing values, scaling (StandardScaler), and categorical encoding (OneHotEncoder).
+  * **Model Trainer:** Evaluates multiple regression algorithms with hyperparameter tuning to automatically select and save the best-performing model.
+* **Experimentation Notebooks:** Dedicated Jupyter notebooks for conducting Exploratory Data Analysis (EDA) and initial model training tests.
+* **Custom Exception & Logging:** Implements robust tracking and error handling to monitor pipeline execution.
+* **Package Ready:** Configured with `setup.py` so the source code can be installed and distributed as a standard Python package.
 
-Frontend: HTML5, CSS (via Flask templates)
+<br>
 
-Serialization: Dill
-
-🚀 Features
-Web Interface: A user-friendly Flask application (app.py / application.py) that allows users to input student details and receive real-time predictions via HTML templates.
-
-Modular ML Pipeline: * Data Ingestion: Reads raw data, performs train-test splits, and stores them in the artifacts directory.
-
-Data Transformation: Handles missing values, scaling (StandardScaler), and categorical encoding (OneHotEncoder).
-
-Model Trainer: Evaluates multiple regression algorithms with hyperparameter tuning to automatically select and save the best-performing model.
-
-Experimentation Notebooks: Dedicated Jupyter notebooks for conducting Exploratory Data Analysis (EDA) and initial model training tests.
-
-Custom Exception & Logging: Implements robust tracking and error handling to monitor pipeline execution.
-
-Package Ready: Configured with setup.py so the source code can be installed and distributed as a standard Python package.
-
-📂 Project Structure
-Plaintext
+## 📂 Project Structure
+```text
 ├── artifacts/                  # Generated datasets and serialized models
 │   ├── data.csv
 │   ├── model.pkl
@@ -68,24 +64,19 @@ Plaintext
 ├── readme.md                   # Project documentation
 ├── requirement.txt             # Project dependencies
 └── setup.py                    # Script to build and install the project as a package
-⚙️ Installation and Setup
-1. Clone the repository
 
-Bash
+<br>
+
+## ⚙️ Installation and Setup
+1. Clone the repository
 git clone <your-repository-url>
 cd <your-repository-directory>
+
 2. Create and activate a virtual environment
-
 On Windows:
-
-Bash
 python -m venv venv
 venv\Scripts\activate
-On macOS/Linux:
 
-Bash
-python3 -m venv venv
-source venv/bin/activate
 3. Install dependencies
 Install the required libraries and the local package setup:
 
