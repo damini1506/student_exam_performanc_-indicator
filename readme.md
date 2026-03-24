@@ -3,8 +3,8 @@
 ## 📝 Description
 This is an end-to-end Machine Learning web application designed to predict a student's math score based on demographic information and performance in other subjects. The project is structured as a modular Python package, breaking down the machine learning lifecycle into distinct components for data ingestion, transformation, and model training.
 
-<br>
 
+<br>
 ## 💻 Tech Stack
 * **Language:** Python 3.x
 * **Web Framework:** Flask
@@ -63,14 +63,13 @@ This is an end-to-end Machine Learning web application designed to predict a stu
 ├── application.py              # Application alias (often used for cloud deployment)
 ├── readme.md                   # Project documentation
 ├── requirement.txt             # Project dependencies
-└── setup.py                    # Script to build and install the project as a package
-
+└── setup.py                    # Script to build and install the project as a package 
 <br>
 
 ## ⚙️ Installation and Setup
 1. Clone the repository
-git clone <your-repository-url>
-cd <your-repository-directory>
+git clone <https://github.com/damini1506/student_exam_performanc_-indicator>
+cd <mlprojects>
 
 2. Create and activate a virtual environment
 On Windows:
@@ -87,7 +86,6 @@ Start the Flask server:
 
 Bash
 python app.py
-The application will be hosted at http://0.0.0.0:5000/.
-
+The application will be hosted at http://127.0.0.1:5000/
 👤 Author
 Damini Sharma
